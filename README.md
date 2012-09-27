@@ -1,6 +1,7 @@
 # Ruby Academy Ottobre 2012 #
 
 Installare RVM
+
 Installare client GitHub
 
 Installare Bundler
