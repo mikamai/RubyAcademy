@@ -27,7 +27,7 @@ Installare l'adapter per SQLite
 ```bash
 sudo gem install dm-sqlite-adapter
 ```
-* oppure *
+*oppure*
 
 usare bundler, quindi creare un file chiamato Gemfile nella cartella del progetto e metterci dentro
 
@@ -149,7 +149,7 @@ get '/task/new' do
   erb :new
 end
 ```
-questo codice va aggiunto * prima * di get '/task/:id' altrimenti sinatra penserà che "new" sia un id
+questo codice va aggiunto *prima* di get '/task/:id' altrimenti sinatra penserà che "new" sia un id
 
 
 creare new.erb con questo codice
