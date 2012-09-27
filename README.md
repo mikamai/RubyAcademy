@@ -77,6 +77,8 @@ irb(main):008:0> Task.first
 
 Aggiungiamo un po di CRUD via REST
 
+# Visualizzazione di un task #
+
 ```ruby
 # show task
 get '/task/:id' do

@@ -1,2 +1,12 @@
-Hello Ruby Class from an erb template!
-
+<h2>Tasks:</h2>
+<% unless @tasks.empty? %>
+<ul>
+<% @tasks.each do |task| %>
+<li <%= "class=\"completed\"" if task.completed_at %>>
+<a href="/task/<%=task.id%>"><%= task.name %></a>
+</li>
+<% end %>
+</ul>
+<% else %>
+<p>No Tasks!</p>
+<% end %>
