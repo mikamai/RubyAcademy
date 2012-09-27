@@ -26,12 +26,34 @@ Installare l'adapter per SQLite
 ```bash
 sudo gem install dm-sqlite-adapter
 ```
+* oppure *
+
+usare bundler, quindi creare un file chiamato Gemfile nella cartella del progetto e metterci dentro
+
+```ruby
+source "http://rubygems.org"
+
+gem 'sinatra', :require => "sinatra/base"
+gem 'data_mapper'
+gem 'dm-sqlite-adapter'
+```
+
+poi eseguire
+
+```bash
+bundle install
+```
+notare come con bundler non ci sia la necessità di usare sudo
 
 Creare il file main.rb
 
+Fare il require di bundler
 Connettersi al Database
 
 ```ruby
+require 'rubygems'
+require 'bundler/setup'
+
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
@@ -118,7 +140,7 @@ $> ruby main.rb
 
 ## Creazione di nuovi task ##
 
-in main.rb
+in main.rb aggiungere
 
 ```ruby
 # new task
@@ -126,6 +148,8 @@ get '/task/new' do
   erb :new
 end
 ```
+questo codice va aggiunto * prima * di get '/task/:id' altrimenti sinatra penserà che "new" sia un id
+
 
 creare new.erb con questo codice
 
@@ -259,6 +283,9 @@ end
 
 ```ruby
 require 'rubygems'
+require 'bundler/setup'
+
+require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
@@ -277,16 +304,18 @@ get '/tasks' do
   erb :index
 end
 
+# new task
+get '/task/new' do
+  erb :new
+end
+
 # show task
 get '/task/:id' do
   @task = Task.get(params[:id])
   erb :task
 end
 
-# new task
-get '/task/new' do
-  erb :new
-end
+
 
 # create new task   
 post '/task/create' do

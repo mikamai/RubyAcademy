@@ -20,16 +20,18 @@ get '/tasks' do
   erb :index
 end
 
+# new task
+get '/task/new' do
+  erb :new
+end
+
 # show task
 get '/task/:id' do
   @task = Task.get(params[:id])
   erb :task
 end
 
-# new task
-get '/task/new' do
-  erb :new
-end
+
 
 # create new task   
 post '/task/create' do
