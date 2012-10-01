@@ -55,7 +55,6 @@ Connettersi al Database
 require 'rubygems'
 require 'bundler/setup'
 
-require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
@@ -75,7 +74,7 @@ DataMapper.auto_upgrade!
 Testare con irb il collegamento con il database
 
 ```bash
-$> irb -r main.rb
+$> irb -r "./main.rb"
 ```
 ```bash
 $irb(main): > Task.all
