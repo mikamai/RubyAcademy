@@ -5,7 +5,9 @@ require 'todo_list'
 
 list = TodoList.new
 
-list.do!
-
-puts list
-
+if ARGV.first == '--list'
+  puts list.to_s(:done)
+else
+  list.do!
+  puts list
+end
