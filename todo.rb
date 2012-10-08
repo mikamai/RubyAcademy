@@ -40,14 +40,11 @@ class TodoList
   attr_reader :path
 
   def items
-    @items ||= []
+    @items ||= File.exist?(path) ? YAML.load_file(path) : []
   end
 end
 
 list = TodoList.new('~/.ra-todos')
-list << 'prendi il latte'
-list << 'lava i piatti'
-list << 'leggi _why'
 
 unless ARGV.empty?
   list << ARGV.join(' ')
