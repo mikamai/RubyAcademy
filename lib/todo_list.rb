@@ -1,19 +1,5 @@
-# coding: utf-8
 require 'yaml'
-
-class Item < Struct.new(:text)
-  attr_accessor :done
-  alias done? done
-
-  DONE_SIGN = '☑'
-  TODO_SIGN = '☐'
-
-  def to_s
-    sign = done? ? DONE_SIGN : TODO_SIGN
-    "#{sign} #{text}"
-  end
-end
-
+require 'item'
 
 class TodoList
   def initialize path
@@ -43,13 +29,4 @@ class TodoList
     @items ||= File.exist?(path) ? YAML.load_file(path) : []
   end
 end
-
-list = TodoList.new('~/.ra-todos')
-
-unless ARGV.empty?
-  list << ARGV.join(' ')
-  list.persist!
-end
-
-puts list
 

@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'todo_list'
+
+list = TodoList.new('~/.ra-todos')
+
+unless ARGV.empty?
+  list << ARGV.join(' ')
+  list.persist!
+end
+
+puts list
+

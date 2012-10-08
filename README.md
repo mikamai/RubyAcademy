@@ -1,5 +1,13 @@
 # TODO list!
 
+## Usage
+
+```bash
+ruby -Ilib bin/todo [TODO CONTENTS]
+```
+
+
+
 
 ## `todo`
 
