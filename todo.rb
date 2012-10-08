@@ -21,11 +21,11 @@ class TodoList
   end
 
   def << text
-    items << Item.new(text)
+    items.unshift Item.new(text)
   end
 
   def to_s
-    items.reverse.join("\n")
+    items.join("\n")
   end
 
   def persist!
