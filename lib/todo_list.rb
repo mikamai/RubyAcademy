@@ -8,6 +8,7 @@ class TodoList
 
   def << text
     items.unshift Item.new(text)
+    persist!
   end
 
   def to_s type = :all
@@ -18,14 +19,9 @@ class TodoList
     end.join("\n")
   end
 
-  def persist!
-    File.open(path, 'w') do |file|
-      file << items.to_yaml
-    end
-  end
-
   def do!
     todo.first.done!
+    persist!
   end
 
 
@@ -43,6 +39,12 @@ class TodoList
 
   def items
     @items ||= File.exist?(path) ? YAML.load_file(path) : []
+  end
+
+  def persist!
+    File.open(path, 'w') do |file|
+      file << items.to_yaml
+    end
   end
 end
 

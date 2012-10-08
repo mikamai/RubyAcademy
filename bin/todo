@@ -7,7 +7,6 @@ list = TodoList.new
 
 unless ARGV.empty?
   list << ARGV.join(' ')
-  list.persist!
 end
 
 puts list.to_s(:todo)
