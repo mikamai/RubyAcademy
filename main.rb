@@ -33,15 +33,15 @@ end
 
 
 
-# create new task   
+# create new task
 post '/task/create' do
   task = Task.new(:name => params[:name])
   if task.save
     status 201
-    redirect '/task/'+task.id.to_s   
+    redirect '/task/'+task.id.to_s
   else
     status 412
-    redirect '/tasks'   
+    redirect '/tasks'
   end
 end
 
@@ -61,7 +61,7 @@ put '/task/:id' do
     redirect '/task/'+task.id.to_s
   else
     status 412
-    redirect '/tasks'   
+    redirect '/tasks'
   end
 end
 
@@ -74,7 +74,7 @@ end
 # delete task
 delete '/task/:id' do
   Task.get(params[:id]).destroy
-  redirect '/tasks'  
+  redirect '/tasks'
 end
 
 DataMapper.auto_upgrade!

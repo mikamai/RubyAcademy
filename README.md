@@ -363,3 +363,90 @@ end
 
 DataMapper.auto_upgrade!
 ```
+
+## E se lo volessimo pubblicare su Heroku? ## 
+
+L'applicazione è quasi pronta per essere pubblicata su Heroku, mancano solo pochi piccoli passi che mettiamo qui sotto, perché sono un po'"tricky"
+
+Per prima cosa dobbiamo aggiungere Git alla nostra applicazione:
+
+```bash
+$ git init
+$ git add .
+$ git commit -m "initial commit"
+```
+
+
+Poi dobbiamo creare il file config.ru, necessario ad Heroku
+
+
+```ruby
+require 'main'
+run Sinatra::Application
+```
+
+Se no abbiamo mai usato Heroku, dobbiamo scaricare gli strumenti per console di Heroku, che si chiamano Heroku Toolbox e sono disponibili sul sito di Heroku
+
+Poi dobbiamo associare la nostra chiave ssh al nostro account Heroku
+
+```bash
+$ heroku keys:add 
+```
+
+...e creiamo l'applicazione Heroku
+
+```bash
+$ heroku create rubyacademytodo
+```
+
+aggiungere l'add on postgresql
+
+```bash
+$ heroku addons:add heroku-postgresql
+$ heroku addons --app nomeapp
+```
+verificare che l'addon sia stato aggiunto
+
+```bash
+$ heroku addons
+```
+
+ora dobbiamo configurare il db
+
+```bash
+$heroku pg:promote HEROKU_POSTGRESQL_COBALT
+```
+
+Modifichiamo il Gemfile: aggiungiamo due gruppi per fare in modo che in locale venga usato sqlite e su Heroku venga usato postgres
+
+Gemfile:
+
+```ruby
+group :development do
+  gem 'dm-sqlite-adapter'
+end
+
+group :production do
+  gem 'dm-postgres-adapter'
+end
+```
+
+Configurare heroku in maniera che escluda il gruppo "development" dal bundle per heroku
+
+```bash
+$ heroku config:add BUNDLE_WITHOUT="development"
+```
+
+E in locale facciamo il bundle in maniera che venga escluso il gruppo "production"
+
+```bash
+$ bundle install --without production
+```
+
+Finalmente fasciamo il commit finale e mandiamo in produzione su Heroku!
+
+```bash
+$ git add .
+$ git commit -m "Final commit"
+$ git push heroku master
+```
