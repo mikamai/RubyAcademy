@@ -20,6 +20,10 @@ class TodoList
     end
   end
 
+  def do!
+    items.first.done!
+  end
+
 
   private
 

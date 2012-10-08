@@ -1,8 +1,12 @@
 # coding: utf-8
 
 class Item < Struct.new(:text)
+
   attr_accessor :done
   alias done? done
+  def done!
+    self.done = true
+  end
 
   DONE_SIGN = '☑'
   TODO_SIGN = '☐'
@@ -11,4 +15,5 @@ class Item < Struct.new(:text)
     sign = done? ? DONE_SIGN : TODO_SIGN
     "#{sign} #{text}"
   end
+
 end
