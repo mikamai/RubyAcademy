@@ -16,6 +16,10 @@ end
 
 
 class TodoList
+  def initialize path
+    @path = File.expand_path(path)
+  end
+
   def << text
     items << Item.new(text)
   end
@@ -25,7 +29,6 @@ class TodoList
   end
 
   def persist!
-    path = File.expand_path('~/.ra-todos')
     File.open(path, 'w') do |file|
       file << items.to_yaml
     end
@@ -34,12 +37,14 @@ class TodoList
 
   private
 
+  attr_reader :path
+
   def items
     @items ||= []
   end
 end
 
-list = TodoList.new
+list = TodoList.new('~/.ra-todos')
 list << 'prendi il latte'
 list << 'lava i piatti'
 list << 'leggi _why'
