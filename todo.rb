@@ -38,7 +38,7 @@ class TodoList
   TODO_SIGN = '☐'
 
   def to_s
-    items.map do |item|
+    items.reverse.map do |item|
       sign = item.done? ? DONE_SIGN : TODO_SIGN
       "#{sign} #{item.text}"
     end.join("\n")
@@ -50,4 +50,9 @@ list << 'prendi il latte'
 list << 'lava i piatti'
 list << 'leggi _why'
 
+unless ARGV.empty?
+  list << ARGV.join(' ')
+end
+
 puts list
+
