@@ -34,11 +34,11 @@ class TodoList
   attr_reader :path
 
   def todo
-    items.select { |item| not item.done? }
+    items.reject(&:done?)
   end
 
   def done
-    items.select { |item| item.done? }
+    items.select(&:done?)
   end
 
   def items
