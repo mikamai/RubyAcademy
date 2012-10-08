@@ -3,7 +3,7 @@
 ## Usage
 
 ```bash
-ruby -Ilib bin/todo [TODO CONTENTS]
+ruby bin/todo [TODO CONTENTS]
 ```
 
 
