@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'yaml'
 
 class Item
   def initialize text
@@ -35,6 +36,13 @@ class TodoList
     end.join("\n")
   end
 
+  def persist!
+    path = File.expand_path('~/.ra-todos')
+    File.open(path, 'w') do |file|
+      file << items.to_yaml
+    end
+  end
+
 
   private
 
@@ -53,6 +61,7 @@ list << 'leggi _why'
 
 unless ARGV.empty?
   list << ARGV.join(' ')
+  list.persist!
 end
 
 puts list
