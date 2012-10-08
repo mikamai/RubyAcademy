@@ -10,8 +10,12 @@ class TodoList
     items.unshift Item.new(text)
   end
 
-  def to_s
-    items.join("\n")
+  def to_s type = :all
+    case type
+    when :todo then todo
+    when :done then done
+    else [done, '', todo]
+    end.join("\n")
   end
 
   def persist!
@@ -21,13 +25,21 @@ class TodoList
   end
 
   def do!
-    items.first.done!
+    todo.first.done!
   end
 
 
   private
 
   attr_reader :path
+
+  def todo
+    items.select { |item| not item.done? }
+  end
+
+  def done
+    items.select { |item| item.done? }
+  end
 
   def items
     @items ||= File.exist?(path) ? YAML.load_file(path) : []

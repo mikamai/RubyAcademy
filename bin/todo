@@ -10,5 +10,5 @@ unless ARGV.empty?
   list.persist!
 end
 
-puts list
+puts list.to_s(:todo)
 
