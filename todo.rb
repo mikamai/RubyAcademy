@@ -4,6 +4,14 @@ require 'yaml'
 class Item < Struct.new(:text)
   attr_accessor :done
   alias done? done
+
+  DONE_SIGN = '☑'
+  TODO_SIGN = '☐'
+
+  def to_s
+    sign = done? ? DONE_SIGN : TODO_SIGN
+    "#{sign} #{text}"
+  end
 end
 
 
@@ -13,10 +21,7 @@ class TodoList
   end
 
   def to_s
-    items.reverse.map do |item|
-      sign = item.done? ? DONE_SIGN : TODO_SIGN
-      "#{sign} #{item.text}"
-    end.join("\n")
+    items.reverse.join("\n")
   end
 
   def persist!
@@ -32,9 +37,6 @@ class TodoList
   def items
     @items ||= []
   end
-
-  DONE_SIGN = '☑'
-  TODO_SIGN = '☐'
 end
 
 list = TodoList.new
