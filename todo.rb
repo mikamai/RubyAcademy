@@ -1,26 +1,9 @@
 # coding: utf-8
 require 'yaml'
 
-class Item
-  def initialize text
-    @text = text
-  end
-
-  def text
-    @text
-  end
-
-  def done
-    @done
-  end
-
-  def done= status
-    @done = status
-  end
-
-  def done?
-    @done
-  end
+class Item < Struct.new(:text)
+  attr_accessor :done
+  alias done? done
 end
 
 
