@@ -28,6 +28,14 @@ class TodoList
     items << Item.new(text)
   end
 
+  def to_s
+    items.reverse.map do |item|
+      sign = item.done? ? DONE_SIGN : TODO_SIGN
+      "#{sign} #{item.text}"
+    end.join("\n")
+  end
+
+
   private
 
   def items
@@ -36,13 +44,6 @@ class TodoList
 
   DONE_SIGN = '☑'
   TODO_SIGN = '☐'
-
-  def to_s
-    items.reverse.map do |item|
-      sign = item.done? ? DONE_SIGN : TODO_SIGN
-      "#{sign} #{item.text}"
-    end.join("\n")
-  end
 end
 
 list = TodoList.new
