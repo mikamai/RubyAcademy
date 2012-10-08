@@ -22,15 +22,32 @@ class Item
   end
 end
 
-items = []
-items << Item.new('prendi il latte')
-items << Item.new('lava i piatti')
-items << Item.new('leggi _why')
 
-DONE_SIGN = '☑'
-TODO_SIGN = '☐'
+class TodoList
+  def << text
+    items << Item.new(text)
+  end
 
-items.each do |item|
-  sign = item.done? ? DONE_SIGN : TODO_SIGN
-  puts "#{sign} #{item.text}"
+  private
+
+  def items
+    @items ||= []
+  end
+
+  DONE_SIGN = '☑'
+  TODO_SIGN = '☐'
+
+  def to_s
+    items.map do |item|
+      sign = item.done? ? DONE_SIGN : TODO_SIGN
+      "#{sign} #{item.text}"
+    end.join("\n")
+  end
 end
+
+list = TodoList.new
+list << 'prendi il latte'
+list << 'lava i piatti'
+list << 'leggi _why'
+
+puts list
