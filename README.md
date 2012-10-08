@@ -7,6 +7,13 @@ ruby bin/todo [TODO CONTENTS]
 ```
 
 
+The list is stored in `~/.ra-todos`, it can be overridden by setting the `TODOLIST` environment variable:
+
+```bash
+TODOLIST="~/.ruby-academy.todos" ruby bin/todo [TODO CONTENTS]
+```
+
+
 
 
 ## `todo`

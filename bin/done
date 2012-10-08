@@ -3,7 +3,7 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'todo_list'
 
-list = TodoList.new
+list = TodoList.new ENV['TODOLIST']
 
 if ARGV.first == '--list'
   puts list.to_s(:done)

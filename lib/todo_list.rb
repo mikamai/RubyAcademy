@@ -2,8 +2,8 @@ require 'yaml'
 require 'item'
 
 class TodoList
-  def initialize path = '~/.ra-todos'
-    @path = File.expand_path(path)
+  def initialize path = nil
+    @path = File.expand_path(path || '~/.ra-todos')
   end
 
   def << text
