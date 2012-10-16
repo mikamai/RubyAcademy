@@ -1,5 +1,9 @@
 Todoapp::Application.routes.draw do
-  resources :lists
+  resources :lists do
+    resources :todos, :except => [:index, :show, :update] do
+      member { put :complete }
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
