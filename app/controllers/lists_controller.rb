@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_filter :find_list, :only => [:show, :edit, :update, :destroy]
+
   # GET /lists
   # GET /lists.json
   def index
@@ -13,8 +15,6 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @list = List.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @list }
@@ -34,14 +34,12 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
-    @list = List.find(params[:id])
   end
 
   # POST /lists
   # POST /lists.json
   def create
     @list = List.new(params[:list])
-
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -56,8 +54,6 @@ class ListsController < ApplicationController
   # PUT /lists/1
   # PUT /lists/1.json
   def update
-    @list = List.find(params[:id])
-
     respond_to do |format|
       if @list.update_attributes(params[:list])
         format.html { redirect_to @list, notice: 'List was successfully updated.' }
@@ -72,12 +68,17 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   # DELETE /lists/1.json
   def destroy
-    @list = List.find(params[:id])
     @list.destroy
 
     respond_to do |format|
       format.html { redirect_to lists_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def find_list
+    @list = List.find(params[:id])
   end
 end
