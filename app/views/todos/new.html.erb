@@ -1,2 +1,24 @@
-<h1>Todos#new</h1>
-<p>Find me in app/views/todos/new.html.erb</p>
+<h1>New todo for <%= @list.name %></h1>
+
+<%= form_for [@list, @todo] do |f| %>
+  <% if @todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @todo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

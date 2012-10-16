@@ -1,0 +1,9 @@
+table {
+  margin: 25px 0;
+  .completed {
+    color: green;
+  }
+  .todo .complete-button input {
+    color: red;
+  }
+}
