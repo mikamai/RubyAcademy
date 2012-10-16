@@ -24,7 +24,7 @@ describe ListsController do
   # List. As you add validations to List, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => 'my list'}
   end
 
   # This should return the minimal set of values that should be in the session
