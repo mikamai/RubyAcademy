@@ -26,6 +26,8 @@ class TodosController < ApplicationController
     redirect_to @list, :notice => 'Todo successfully destroyed.'
   end
 
+  private
+
   def find_list
     @list = List.find(params[:list_id])
   end
