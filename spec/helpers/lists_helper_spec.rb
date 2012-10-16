@@ -11,5 +11,9 @@ require 'spec_helper'
 #   end
 # end
 describe ListsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#link_to_lists_page' do
+    it 'renders expected html' do
+      link_to_lists_page.should == '<a href="/lists">Back</a>'
+    end
+  end
 end
