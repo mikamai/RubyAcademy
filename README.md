@@ -24,7 +24,12 @@ Check all tests pass:
 rake
 ```
 
-Start the server:
+Create some example lists and todos:
+```bash
+rake db:seed
+```
+
+Start the server and visit your app at http://localhost:3000 :
 ```bash
 rails s
 ```
