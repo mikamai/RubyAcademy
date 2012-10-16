@@ -13,7 +13,7 @@ require 'spec_helper'
 describe ListsHelper do
   describe '#link_to_lists_page' do
     it 'renders expected html' do
-      link_to_lists_page.should == '<a href="/lists">Back</a>'
+      link_to_lists_page.should == '<a href="/lists">Back to lists</a>'
     end
   end
 end
