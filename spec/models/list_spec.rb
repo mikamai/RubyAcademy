@@ -11,4 +11,8 @@ describe List do
     invalid = List.new(:name => valid.name)
     invalid.should have(1).error_on(:name)
   end
+
+  it 'hash #todos association' do
+    subject.should respond_to(:todos)
+  end
 end
