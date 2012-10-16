@@ -12,14 +12,19 @@ _October, 1_ **A TodoList webapp with sinatra** (starring [@amicojeko][], [@pilu
 _October, 8_ **A TodoList for the CLI exploring core and stdlib** (starring [@elia][])
 
 
-## Lecture 3: Rails walkthrough …upcoming
+## [Lecture 3: Rails Walkthrough](https://github.com/mikamai/RubyAcademyTodoList/tree/lecture-3)
 
-_October, 15_ (starring [@spaghetticode][])
+_October, 15_ **A TodoList application in Rails 3.2 to introduce the framework** (starring [@spaghetticode][])
 
+
+## Lecture 4: write your own app …upcoming
+
+_October, 22_ (starring [@nicolaracco][])
 
 
 [@pilu]: http://github.com/pilu
 [@elia]: http://github.com/elia
 [@amicojeko]: http://github.com/amicojeko
 [@chiaroscuro]: http://github.com/chiaroscuro
+[@nicolaracco]: https://github.com/nicolaracco
 [@spaghetticode]: http://github.com/spaghetticode
