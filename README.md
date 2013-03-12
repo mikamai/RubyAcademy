@@ -4,7 +4,13 @@
 
 ## [Lecture 1: Intro + Ruby Basics](https://github.com/mikamai/RubyAcademy/tree/2013/lecture-1)
 
-_March, 11_ **The Ruby -programming- language** (starring [@elia][])
+(March, 11)
+
+- Intro
+- The Ruby <del>programming</del> language 
+- Method definition, Classes and Modules basics
+
+**starring: [@elia][]**
 
 
 <!-- ## Lecture 2: Ruby Basics
