@@ -1,13 +1,14 @@
-# `✒ Mikamai RubyAcademy 2012`
+# `✒ Mikamai Ruby Academy 2013`
 
 
 
-## [Lecture 1: Ruby Showoff](https://github.com/mikamai/RubyAcademyTodoList/tree/lecture-1)
+## [Lecture 1: Intro + Ruby Basics](https://github.com/mikamai/RubyAcademy/tree/2013/lecture-1)
 
-_October, 1_ **A TodoList webapp with sinatra** (starring [@amicojeko][], [@pilu][] and [@chiaroscuro][])
+_March, 11_ **The Ruby -programming- language** (starring [@elia][])
 
 
-## [Lecture 2: Ruby Basics](https://github.com/mikamai/RubyAcademyTodoList/tree/lecture-2)
+<!-- ## Lecture 2: Ruby Basics
+(https://github.com/mikamai/RubyAcademyTodoList/tree/lecture-2)
 
 _October, 8_ **A TodoList for the CLI exploring core and stdlib** (starring [@elia][])
 
@@ -19,7 +20,7 @@ _October, 15_ **A TodoList application in Rails 3.2 to introduce the framework**
 
 ## Lecture 4: write your own app …upcoming
 
-_October, 22_ (starring [@nicolaracco][])
+_October, 22_ (starring [@nicolaracco][]) -->
 
 
 [@pilu]: http://github.com/pilu
