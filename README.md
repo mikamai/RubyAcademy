@@ -4,7 +4,7 @@
 
 ## [Lecture 1: Intro + Ruby Basics](https://github.com/mikamai/RubyAcademy/tree/2013/lecture-1)
 
-(March, 11) [Slides](https://github.com/mikamai/RubyAcademy/blob/2013/master/slides/1-Ruby%20Academy%202013%20(Intro).pdf)
+(March, 11) [Slides](https://github.com/mikamai/RubyAcademy/blob/2013/master/slides/1-Ruby%20Academy%202013%20\(Intro\).pdf?raw=true)
 
 - Intro
 - The Ruby <del>programming</del> language
