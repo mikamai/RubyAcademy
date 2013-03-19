@@ -13,6 +13,19 @@
 **starring: [@elia][]**
 
 
+## [Lecture 2: More Ruby](https://github.com/mikamai/RubyAcademy/blob/2013/master/slides/lecture-2)
+
+(March, 18) [Slides](https://github.com/mikamai/RubyAcademy/blob/2013/master/slides/lecture-2)
+
+- Expressions
+- Methods and Classes
+- Classes
+- Modules
+- Blocks
+
+**starring: [@dfranciosi][]**
+
+
 <!-- ## Lecture 2: Ruby Basics
 (https://github.com/mikamai/RubyAcademyTodoList/tree/lecture-2)
 
