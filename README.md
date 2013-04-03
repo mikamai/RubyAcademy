@@ -48,3 +48,4 @@ _October, 22_ (starring [@nicolaracco][]) -->
 [@chiaroscuro]: http://github.com/chiaroscuro
 [@nicolaracco]: https://github.com/nicolaracco
 [@spaghetticode]: http://github.com/spaghetticode
+[@dfranciosi]: http://github.com/dfranciosi
